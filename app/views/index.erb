@@ -1,0 +1,223 @@
+
+<div class="container">
+ 
+  <form action='/results' method="POST">
+  <!---Vegetables--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Vegetables<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:vegetables].each do |item|%>
+
+            <li><input type="checkbox" name="vegetable" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+
+   </div>
+
+ </div>
+
+<!--- Meat, Poultry, and Eggs--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Meat, Eggs and Poultry<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:meat_poultry_eggs].each do |item|%>
+
+            <li><input type="checkbox" name="meat_poultry_eggs" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+
+   </div>
+
+ </div>
+<!---Herbs And Spices--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Herbs And Spices<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:herbs_and_spices].each do |item|%>
+
+            <li><input type="checkbox" name="herbs_and_spices" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+
+<!---Grains--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Grains<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:grains].each do |item|%>
+
+            <li><input type="checkbox" name="grains" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+   </div>
+
+ </div>
+<!---Sea Food--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Sea Food<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:seafood].each do |item|%>
+
+            <li><input type="checkbox" name="seafood" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+   </div>
+
+ </div>
+<!---Nuts And Beans --->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Nuts And Beans<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:nuts_and_beans].each do |item|%>
+
+           <li><input type="checkbox" name="nuts_and_beans" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+   </div>
+
+ </div>
+<!---Oils And Condiments--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Oils And Condiments<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:oils_and_condiments].each do |item|%>
+
+            <li><input type="checkbox" name="oils_and_condiments" value="<%=item%>"/><%=item%></li>
+            <%end%>
+
+          </ul>
+
+     </div>
+   </div>
+
+ </div>
+<!---Dairy--->
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="button-group">
+
+        <button type="button" class="btn btn-success btn-block dropdown-toggle" data-
+
+toggle="dropdown"><span class="glyphicon glyphicon-heart-empty"></span>Dairy<span 
+
+class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+
+            <% @ingredients[:dairy].each do |item|%>
+
+            <li><input type="checkbox" name="dairy" value="<%=item%>"/><%=item%></li>
+
+            <%end%>
+
+          </ul>
+
+     </div>
+   </div>
+
+ </div>
+       <button type='Submit' class="btn btn-success btn-block">Submit</button>
+      </form>
+</div>
