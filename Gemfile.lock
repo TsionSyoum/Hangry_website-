@@ -81,6 +81,3 @@ DEPENDENCIES
   sqlite3
   tux
   yummly
-
-BUNDLED WITH
-   1.10.5
