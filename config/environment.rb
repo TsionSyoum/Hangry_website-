@@ -5,7 +5,7 @@ require './app/models/model.rb'
 
 #require './app/models/user'
 
-require './app/models/recipe.rb'
+
 
 
 configure :development do
