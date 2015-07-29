@@ -1,4 +1,4 @@
-require 'yummly'
+drequire 'yummly'
 
 class Search
   attr_accessor :results
