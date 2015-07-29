@@ -5,7 +5,29 @@
 
 header {
 text-align: center;
-color: #fff;
-background-image: url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg");
 
+opacity: 0.8;
+background-image: url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg");
+background-size: cover;
+text-shadow: 2px 2px #000
+}
+
+
+li.page-scroll>a#portfolio{
+ color: rbg:(3,151,108);
+}
+
+.navbar-collapse.collapse {
+  padding-top:-10px;}
+  
+.navbar-brand{
+  padding: 0px;
+}
+
+.navbar-brand{
+  color: green;
+}
+
+#my-nav{
+  height: 50px
 }
