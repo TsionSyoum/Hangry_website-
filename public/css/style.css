@@ -7,27 +7,32 @@ header {
 text-align: center;
 
 opacity: 0.8;
-background-image: url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg");
+background-image: url ("Today's_Pantry_Logo.png")
+/*   url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg"); */
 background-size: cover;
-text-shadow: 2px 2px #000
+text-shadow: 2px 2px #000;
+font-weight: bold;
+/*   color: blue; */
 }
 
-
-li.page-scroll>a#portfolio{
- color: rbg:(3,151,108);
-}
-
-.navbar-collapse.collapse {
-  padding-top:-10px;}
-  
-.navbar-brand{
-  padding: 0px;
-}
-
-.navbar-brand{
-  color: green;
+.navbar {
+  background-color: #2c3e50;
 }
 
 #my-nav{
-  height: 50px
+  height: 70px
 }
+
+/* img {
+  margin: 0px;
+  padding: 0px;
+} */
+/* 
+::after {
+  text-shadow: 0px 0px #fff
+} */
+.navbar-default .navbar-nav>li>a {
+  color: white;  
+}
+body {
+background-color: }

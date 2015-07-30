@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
   post "/results" do
     @ingredients = INGREDIENTS
+
     @selected_ingredients = []
     @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
     @all_ingredients = []
@@ -21,6 +22,16 @@ class ApplicationController < Sinatra::Base
       @all_ingredients += value
     end
     @excluded_ingredients = array_diff(@all_ingredients, @selected_ingredients)   
+
+    @vegetables = params[:vegetables]
+    @meat_poultry_eggs = params[:meat_poultry_eggs]
+    @herbs_and_spices = params[:herbs_and_spices]
+    @grains = params[:grains]
+    @seafood = params[:seafood]
+    @nuts_and_beans = params[:nuts_and_beans]
+    @oils_and_condiments = params[:oils_and_condiments]
+    @dairy = params[:dairy] 
+
   end
 
 INGREDIENTS = {:vegetables => ["Artichoke", "Arugula", "Asparagus", "Avocado", "Beetroot", "Bamboo Shoots", "Bell Peppers", "Bok choy", "Broccoli", "Brussels Sprouts", "Butternut Squash", "Cabbage", "Capsicum", "Carrots", "Cauliflower", "Celery", "Chives", "Cucumber", "Corn","Daikon", "Eggplant", "Garlic", "Ginger", "Habanero", "Jalapeno", "Kale", "Lettuce", "Mushrooms", "Okra", "Onion", "Parsley", "Parsnip", "Peas", "Peppers", "Potato", "Pumpkin", "Radish", "Rhubarb", "Rutabaga", "Scallion", "Shallot", "Spinach", "Sweet Corn", "Sweet Potato", "Taro", "Tomato", "Turnip", "Wasabi", "Watercress", "White Radish", "Yam", "Zucchini"], 
