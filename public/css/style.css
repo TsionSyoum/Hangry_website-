@@ -1,6 +1,3 @@
-/* header{
-  background-image: url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg");
-} */
 
 @font-face {
   font-family: JuneBug;
@@ -10,63 +7,74 @@
 header {
 text-align: center;
 opacity: 0.8;
-/* background-image: url("../img/Todays_Pantry_Logo.png"); */
+background-image: url(img/"FullSizeRender.jpg");
 /*   url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg"); */
 background-size: cover;
-text-shadow: 2px 2px #000;
+/* text-shadow: 2px 2px #000; */
 font-weight: bold;
 background-color: white;
 font: JuneBug; 
 /*   FONT DOESNT WORK!!!!!! */
 color: rgb(199,40,32);
-
 }
+
+
 /* FONT IN NAV BAR FIRST COLOR */
 .navbar {
   background-color: white;
+  display: center;
 }
 
+navbar navbar-default {
+  display: center;
+}
 /* FONT IN NAV BAR SECOND COLOR --- DOENS'T WORK!!!*/ 
 a#portfolio {
   color: rgb(199,40,32);
+  opacity: 0.8;
 }
 
-a.about {
-  color: red;
+a#about {
+  color: rgb(199,40,32);
+  opacity: 0.8;
 }
 
-a.contact {
-  color: red;
+a#contact {
+  color: rgb(199,40,32);
+  opacity: 0.8;
 }
 #my-nav{
   height: 70px
 }
  
-/* .flyin {
-  position: absolute;
-  left: -600px;
-  transition: left 1s;
-} */
-/* img {
-  margin: 0px;
-  padding: 0px;
-} */
-/* 
-::after {
-  text-shadow: 0px 0px #fff
-} */
+
 .navbar-default .navbar-nav>li>a {
 color: rgb(199,40,32);  
 }
 
+.navbar-nav>li>a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
 body {
 background-color: }
 
-
-hr {
-     color: #f00;
-     background: #f00; 
-     width: 75%; 
-     height: 5px;
+h2 {
+ color: rgb(199,40,32);
+  opacity: 0.8;
 }
+hr {
+     color: black;
+     background: black; 
+     width: 85%; 
+     height: 2px;
+}
+
+footer-above{
+  background-color: rgb(199,40,32);
+}
+/* 
+div {
+  line-height: 1
+} */
