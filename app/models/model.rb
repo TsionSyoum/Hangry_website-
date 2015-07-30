@@ -35,8 +35,8 @@ class Search
 #     puts "Here is a link to the recipe: http://www.yummly.com/recipe/#{first_recipe_id}"
 #     puts "--------------------------------"
 #   end
+# end
 end
-
-searcher = Search.new
-searcher.search('chocolate chip cookies')
-searcher.display_results
+# searcher = Search.new
+# searcher.search('chocolate chip cookies')
+# searcher.display_results

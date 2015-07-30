@@ -1,5 +1,5 @@
 require_relative "../../config/environment"
-require_relative "../models/yummly.rb"
+require_relative "../models/model.rb"
 
 class ApplicationController < Sinatra::Base
   
