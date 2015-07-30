@@ -18,12 +18,12 @@ class ApplicationController < Sinatra::Base
     @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
     @all_ingredients = Search.all_ingredients
     @excluded_ingredients = []
+    puts @all_ingredients
     @all_ingredients.each do |item|
       unless @selected_ingredients.include?(item)
         @excluded_ingredients << item
 		end
 	end   
-
     @vegetables = params[:vegetables]
     @meat_poultry_eggs = params[:meat_poultry_eggs]
     @herbs_and_spices = params[:herbs_and_spices]
@@ -33,10 +33,8 @@ class ApplicationController < Sinatra::Base
     @oils_and_condiments = params[:oils_and_condiments]
     @dairy = params[:dairy] 
     
-   
-    
-    puts Search.search(@excluded_ingredients)
-
+    @final_recipes = Search.search(@excluded_ingredients)
+    erb :results
   end
 
 INGREDIENTS = {:vegetables => ["Artichoke", "Arugula", "Asparagus", "Avocado", "Beetroot", "Bamboo Shoots", "Bell Peppers", "Bok choy", "Broccoli", "Brussels Sprouts", "Butternut Squash", "Cabbage", "Capsicum", "Carrots", "Cauliflower", "Celery", "Chives", "Cucumber", "Corn","Daikon", "Eggplant", "Garlic", "Ginger", "Habanero", "Jalapeno", "Kale", "Lettuce", "Mushrooms", "Okra", "Onion", "Parsley", "Parsnip", "Peas", "Peppers", "Potato", "Pumpkin", "Radish", "Rhubarb", "Rutabaga", "Scallion", "Shallot", "Spinach", "Sweet Corn", "Sweet Potato", "Taro", "Tomato", "Turnip", "Wasabi", "Watercress", "White Radish", "Yam", "Zucchini"], 
