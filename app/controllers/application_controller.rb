@@ -1,5 +1,5 @@
 require_relative "../../config/environment"
-require_relative "../models/model.rb"
+require_relative "../models/yummly.rb"
 
 class ApplicationController < Sinatra::Base
   
@@ -14,6 +14,15 @@ class ApplicationController < Sinatra::Base
   end
   post "/results" do
     @ingredients = INGREDIENTS
+
+    @selected_ingredients = []
+    @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
+    @all_ingredients = []
+    @ingredients.each do |key, value|
+      @all_ingredients += value
+    end
+    @excluded_ingredients = array_diff(@all_ingredients, @selected_ingredients)   
+
     @vegetables = params[:vegetables]
     @meat_poultry_eggs = params[:meat_poultry_eggs]
     @herbs_and_spices = params[:herbs_and_spices]
@@ -22,6 +31,7 @@ class ApplicationController < Sinatra::Base
     @nuts_and_beans = params[:nuts_and_beans]
     @oils_and_condiments = params[:oils_and_condiments]
     @dairy = params[:dairy] 
+
   end
 
 INGREDIENTS = {:vegetables => ["Artichoke", "Arugula", "Asparagus", "Avocado", "Beetroot", "Bamboo Shoots", "Bell Peppers", "Bok choy", "Broccoli", "Brussels Sprouts", "Butternut Squash", "Cabbage", "Capsicum", "Carrots", "Cauliflower", "Celery", "Chives", "Cucumber", "Corn","Daikon", "Eggplant", "Garlic", "Ginger", "Habanero", "Jalapeno", "Kale", "Lettuce", "Mushrooms", "Okra", "Onion", "Parsley", "Parsnip", "Peas", "Peppers", "Potato", "Pumpkin", "Radish", "Rhubarb", "Rutabaga", "Scallion", "Shallot", "Spinach", "Sweet Corn", "Sweet Potato", "Taro", "Tomato", "Turnip", "Wasabi", "Watercress", "White Radish", "Yam", "Zucchini"], 
@@ -38,5 +48,7 @@ INGREDIENTS = {:vegetables => ["Artichoke", "Arugula", "Asparagus", "Avocado", "
 
 :oils_and_condiments => ["Coconut oil", "Corn oil", "Olive oil", "Palm oil", "Peanut oil", "Sesame oil", "Soybean oil", "Sunflower oil", "Almond oil", "Brazil nut oil", "Cashew oil", "Hazelnut oil", "Macadamia oil", "Pecan oil", "Pine nut oil", "Walnut oil", "Pumpkin seed oil", "Canola oil", "Fish oil", "Ketchup", "Mustard", "Mayonnaise", "Soy sauce", "Hot sauce", "BBQ sauce", "Sour cream", "Horseradish", "Tomato Sauce", "Chilli sauce", "Fish sauce", "Maple syrup", "Jam", "Vinegar", "Worcestershire sauce", "Honey", "Chutney", "Pesto", "Teriyaki sauce", "Thai peanut sauce", "Salt", "Pepper", "Chipotles in adobo", "Vegetale stock", "Curry powder", "Tomato juice", "Apple cider vinegar", "Chilli paste"],
 
-:dairy =>["Butter", "Buttermilk", "Cheese", "Condensed milk", "Cottage cheese", "Cream", "Cream cheese", "Custard", "Dulce de leche", "Evaporated milk", "Frozen yogurt", "Goat milk", "Ice cream", "Whipped cream", "Whole milk", "Skim milk"]}
+:dairy =>["Butter", "Buttermilk", "Cheese", "Condensed milk", "Cottage cheese", "Cream", "Cream cheese", "Custard", "Dulce de leche", "Evaporated milk", "Frozen yogurt", "Goat milk", "Ice cream", "Whipped cream", "Whole milk", "Skim milk"], 
+  
+:fruit => ["Açai Berries",  "Apple, Apricot", "Avocado", "Banana", "Blackberry," "Blueberry", "Boysenberry", "Cantaloupe", "Cherry, Coconut", "Cranberry", "Date", "Dragonfruit", "Durian", "Fig", "Gooseberry", "Grape", "Raisin", "Grapefruit", "Guava", "Honeydew", "Jackfruit", "Jujube", "Kiwi", "Kumquat", "Lemon", "Lime", "Lychee", "Mango", "Mulberry", "Nectarine", "Olive", "Orange", "Blood Orange", "Clementine", "Mandarine", "Tangerine", "Papaya", "Passionfruit", "Peach", "Pear", "Plum", "Prune", "Pineapple", "Pomegranate", "Raspberry", "Black Raspberry", "Star Fruit", "Strawberry", "Watermelon"]}
 end
