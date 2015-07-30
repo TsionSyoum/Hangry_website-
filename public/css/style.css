@@ -22,7 +22,12 @@ font-weight: bold;
 #my-nav{
   height: 70px
 }
-
+ 
+.flyin {
+  position: absolute;
+  left: -500px;
+  transition: left 1.5s;
+}
 /* img {
   margin: 0px;
   padding: 0px;
