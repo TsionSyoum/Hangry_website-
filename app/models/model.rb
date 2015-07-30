@@ -1,5 +1,6 @@
 require 'yummly'
-
+require "open-uri"
+require "json"
 class Search
   attr_accessor :results
 
@@ -11,32 +12,34 @@ class Search
     end
   end
   
-  def exclude(ingredients_to_exclude)
-    ingredients_to_exclude.each do |item|
-      Yummly.excludedIngredient[item]
+  def self.all_ingredients()
+    @this_url = "http://api.yummly.com/v1/api/recipes?_app_id=4e9f2aa0&_app_key=e54e9cfa05d58b64bab7da2301f05c0b"
+    recipes = open(@this_url).read
+    @recipe_hash = JSON.parse(recipes)
+    @matches = @recipe_hash["matches"]
+    @all =[]
+    @matches.each do |item|
+      item["ingredients"].each do |ingredient|
+        @all << ingredient
+      end
     end
+    
+    puts @all
+    return @all
   end
-    
-    
-
   
-#   def search(recipe)
-#     @results = Yummly.search(recipe) # this returns an array of recipe results
-#   end
-
-#   def display_results
-#     first_recipe_name = @results.first.name
-#     first_recipe_ingredients = @results.first.ingredients # this returns an array of recipe ingredients
-#     first_recipe_id = @results.first.id
-
-#     puts "--------------------------------"
-#     puts "Recipe name: #{first_recipe_name}"
-#     puts "Recipe ingredients: #{first_recipe_ingredients}"
-#     puts "Here is a link to the recipe: http://www.yummly.com/recipe/#{first_recipe_id}"
-#     puts "--------------------------------"
-#   end
-# end
+  def self.search(excluded_ingredients)
+    @url = "http://api.yummly.com/v1/api/recipes?_app_id=4e9f2aa0&_app_key=e54e9cfa05d58b64bab7da2301f05c0b"
+    excluded_ingredients.each do |exclude|
+      exclude = exclude.gsub(" ", "+")
+      
+      @url += "&excludedIngredient[]=" + "#{exclude}"
+    end
+    recipes = open(@url).read
+    return JSON.parse(recipes)
+    
+  end
+  
 end
-# searcher = Search.new
-# searcher.search('chocolate chip cookies')
-# searcher.display_results
+
+

@@ -14,14 +14,15 @@ class ApplicationController < Sinatra::Base
   end
   post "/results" do
     @ingredients = INGREDIENTS
-
     @selected_ingredients = []
     @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
-    @all_ingredients = []
-    @ingredients.each do |key, value|
-      @all_ingredients += value
-    end
-    @excluded_ingredients = array_diff(@all_ingredients, @selected_ingredients)   
+    @all_ingredients = Search.all_ingredients
+    @excluded_ingredients = []
+    @all_ingredients.each do |item|
+      unless @selected_ingredients.include?(item)
+        @excluded_ingredients << item
+		end
+	end   
 
     @vegetables = params[:vegetables]
     @meat_poultry_eggs = params[:meat_poultry_eggs]
@@ -31,6 +32,10 @@ class ApplicationController < Sinatra::Base
     @nuts_and_beans = params[:nuts_and_beans]
     @oils_and_condiments = params[:oils_and_condiments]
     @dairy = params[:dairy] 
+    
+   
+    
+    puts Search.search(@excluded_ingredients)
 
   end
 
