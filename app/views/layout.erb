@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <title>Today's Pantry</title>
 <!--     <div class="title" >
        <center><h1>Today's Pantry</h1></center>
   </div>
@@ -39,6 +40,15 @@
 
 <body id="page-top" class="index">
  
+<!--  Connect with FB  -->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
    
     <!-- Header -->
     <header>
@@ -46,6 +56,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
+                      <img src="./img/fridge.jpg" height="150" width="150">
                        <center><h1>Today's Pantry</h1></center>
                         
                             <span class="skills">Become the chef you always wanted to be</span>
@@ -56,7 +67,7 @@
     </header>
   
   
-  <center>GET RID OF THIS SPACE!!! </center>
+ 
 <!-- LINE -->
   <div class="hr"><hr />
   </div>
@@ -74,13 +85,13 @@
                 </button>
 
           </div>
-
+        <center>WHY DON'T THESE LINKS WORK!?!??!</center>
 <!--              Collect the nav links, forms, and other content for toggling  -->
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-center">
 <!--                     <li class="hidden">
                         <a href="#page-top"></a> -->
-                    </li>
+<!--                     </li> -->
                     <li class="page-scroll">
                         <a id="portfolio" href="#portfolio">The Basics</a>
                     </li>
@@ -136,7 +147,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Ingredients</h2><br><br>
-<!--                     <hr class="star-primary"> -->
+
                 </div>
               <%=yield%>
             </div>
@@ -205,14 +216,15 @@
    <div class="hr"><hr />
   </div>
   
-              <center>GET RID OF SPACE</center>
+             
               
     <!-- How to use Section -->
      <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>How to Use Today's Pantry</h2>
+                    <h2>How to Use Today's Pantry</h2><br>
+                  <p>To enjoy a delicious meal, click on the check boxes next to the ingredients you wish to use. Once you have chosen at least five ingredients click the submit button and be prepared to be amazed by your culinary abilities!</p> <br>
                 </div>
             </div>
 
@@ -232,23 +244,28 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3> -->
-                  INSERT SOCAL MEDIA BUTTONS
+                 
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+<!--                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a> -->
+                              <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
+                            </li>
+                            
+                            <li>
+<!--                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a> -->
+                              <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="YourSite" size="10px">Tweet</a>
+                            </li>
+                          
+                          <li>
+<!--                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a> -->
+                              <g:plusone></g:plusone>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+<!--                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 <!--                     <div class="footer-col col-md-4"> -->
@@ -521,6 +538,10 @@
         <script type="text/javascript" src="slogan.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <!--   JS for Twitter and Google + -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>  
 
 </body>
 </html>

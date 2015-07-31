@@ -16,17 +16,34 @@ background-color: white;
 font: JuneBug; 
 /*   FONT DOESNT WORK!!!!!! */
 color: rgb(199,40,32);
+ margin: 5px;
 }
 
 
+h1 {
+  font-size: -webkit-xxx-large;
+
+}
+
+span {
+  text-shadow: 1px 1px #000;
+}
 /* FONT IN NAV BAR FIRST COLOR */
 .navbar {
   background-color: white;
   display: center;
+ 
 }
 
 navbar navbar-default {
   display: center;
+  padding: 5px;
+  margin: 5px;
+   left: 100px;
+}
+
+collapse navbar-collapse {
+  left: 50px;
 }
 /* FONT IN NAV BAR SECOND COLOR --- DOENS'T WORK!!!*/ 
 a#portfolio {
@@ -47,23 +64,47 @@ a#contact {
   height: 70px
 }
  
+button
 
 .navbar-default .navbar-nav>li>a {
-color: rgb(199,40,32);  
+color: rgb(199,40,32);
+  text-align: center;
 }
 
 .navbar-nav>li>a {
   padding-top: 0px;
   padding-bottom: 0px;
+  
 }
 
-body {
-background-color: }
+header .container {
+  padding: 5px;
+
+}
+/* .img1 {
+  border-style: solid;
+  border-width: 5px;
+  height: 500px;
+  width: 440px;
+  color: rgb(199,40,32);
+  opacity: 0.8; */
+}
+
+
+section h2 {
+  font-size: 2em;
+}
 
 h2 {
  color: rgb(199,40,32);
-  opacity: 0.8;
+ opacity: 0.8;
 }
+
+/* SHOULD MAKE THE INGREDIENTS AND HOW TO SMALLER!!!! */
+/* section h2 {
+  size: 32px;
+} */
+
 hr {
      color: black;
      background: black; 
@@ -71,8 +112,20 @@ hr {
      height: 2px;
 }
 
-footer-above{
+section {
+  padding: 5px;
+}
+
+footer .footer-above{
   background-color: rgb(199,40,32);
+  opacity: 0.8;
+ 
+}
+
+
+footer .footer-below {
+  background-color: rgb(199,40,32);
+   opacity: 0.9;
 }
 /* 
 div {
