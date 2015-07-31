@@ -10,11 +10,12 @@
     <img src="<%=recipe["imageUrlsBySize"]["90"]%>" alt="A Viable Recipe">
     <%end%>
     <h3>Rating: <%= recipe["rating"]%></h3>
-    <h3>totalTimeInSeconds: <%= recipe["rating"]%></h3>
+    <h3>totalTimeInSeconds: <%= recipe["totalTimeInSeconds"]%></h3>
     <h3>Ingredients: </h3>
     <% recipe["ingredients"].each do |ingredient| %>
     <p><%=ingredient%>, <p>
     <% end %>
+    <h3><a href = "http://www.yummly.com/recipe/<%=recipe["id"]%>?columns=4&position=1%2F1">Recipe link</a></h3>
   </center>
   </div>
   <% end %>
