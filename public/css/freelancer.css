@@ -257,6 +257,7 @@ section.success a.active {
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
+      
     }
 }
 
@@ -283,6 +284,7 @@ section.success a.active {
     margin-bottom: 0;
     padding-bottom: .5em;
     border-bottom: 1px solid #eee;
+  
 }
 
 .floating-label-form-group input,

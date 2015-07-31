@@ -7,8 +7,6 @@
 header {
 text-align: center;
 opacity: 0.8;
-background-image: url(img/"FullSizeRender.jpg");
-/*   url("http://healthybreakfastfoods.info/wp-content/uploads/2014/10/healthy-food-background.jpg"); */
 background-size: cover;
 /* text-shadow: 2px 2px #000; */
 font-weight: bold;
@@ -108,7 +106,7 @@ h2 {
 hr {
      color: black;
      background: black; 
-     width: 85%; 
+     width: 78%; 
      height: 2px;
 }
 
