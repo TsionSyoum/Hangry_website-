@@ -16,7 +16,7 @@
 
             <% @ingredients[:vegetables].each do |item|%>
 
-            <li><input type="checkbox" name="vegetables" value="<%=item%>"><%=item%></li>
+            <li><input type="checkbox" name="vegetables[]" value="<%=item%>"><%=item%></li>
 
             <%end%>
 
@@ -36,7 +36,7 @@
 
             <% @ingredients[:fruit].each do |item|%>
 
-            <li><input type="checkbox" name="fruit" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="fruit[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -56,7 +56,7 @@
 
             <% @ingredients[:meat_poultry_eggs].each do |item|%>
 
-            <li><input type="checkbox" name="meat_poultry_eggs" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="meat_poultry_eggs[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -76,7 +76,7 @@
 
             <% @ingredients[:herbs_and_spices].each do |item|%>
 
-            <li><input type="checkbox" name="herbs_and_spices" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="herbs_and_spices[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -95,7 +95,7 @@
 
             <% @ingredients[:grains].each do |item|%>
 
-            <li><input type="checkbox" name="grains" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="grains[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -115,7 +115,7 @@
 
             <% @ingredients[:seafood].each do |item|%>
 
-            <li><input type="checkbox" name="seafood" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="seafood[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -132,7 +132,7 @@
 
             <% @ingredients[:nuts_and_beans].each do |item|%>
 
-           <li><input type="checkbox" name="nuts_and_beans" value="<%=item%>"/><%=item%></li>
+           <li><input type="checkbox" name="nuts_and_beans[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 
@@ -152,7 +152,7 @@
 
             <% @ingredients[:oils_and_condiments].each do |item|%>
 
-            <li><input type="checkbox" name="oils_and_condiments" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="oils_and_condiments[]" value="<%=item%>"/><%=item%></li>
             <%end%>
 
           </ul>
@@ -171,7 +171,7 @@
 
             <% @ingredients[:dairy].each do |item|%>
 
-            <li><input type="checkbox" name="dairy" value="<%=item%>"/><%=item%></li>
+            <li><input type="checkbox" name="dairy[]" value="<%=item%>"/><%=item%></li>
 
             <%end%>
 

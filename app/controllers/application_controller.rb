@@ -12,18 +12,47 @@ class ApplicationController < Sinatra::Base
     @ingredients = INGREDIENTS
     erb :index
   end
+ 
   post "/results" do
     @ingredients = INGREDIENTS
+    if params[:vegetables] == nil
+      params[:vegetables] = []
+    end
+    if params[:meat_poultry_eggs] == nil
+      params[:meat_poultry_eggs] = []
+    end
+    if params[:herbs_and_spices] == nil
+      params[:herbs_and_spices] = []
+    end
+    if params[:grains] == nil
+      params[:grains] = []
+    end
+    if params[:seafood] == nil
+      params[:seafood] = []
+    end
+    if params[:nuts_and_beans] == nil
+      params[:nuts_and_beans] = []
+    end
+    if params[:oils_and_condiments] == nil
+      params[:oils_and_condiments] = []
+    end
+    if params[:dairy] == nil
+      params[:dairy] = []
+    end
+    if params[:fruit] == nil
+      params[:fruit] = []
+    end
+                  
     @selected_ingredients = []
     @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
-    @all_ingredients = Search.all_ingredients
-    @excluded_ingredients = []
-    puts @all_ingredients
-    @all_ingredients.each do |item|
-      unless @selected_ingredients.include?(item)
-        @excluded_ingredients << item
-		end
-	end   
+#     @all_ingredients = Search.all_ingredients
+#     @excluded_ingredients = []
+#     puts @all_ingredients
+#     @all_ingredients.each do |item|
+#       unless @selected_ingredients.include?(item)
+#         @excluded_ingredients << item
+# 		end
+# 	end   
     @vegetables = params[:vegetables]
     @meat_poultry_eggs = params[:meat_poultry_eggs]
     @herbs_and_spices = params[:herbs_and_spices]
@@ -33,7 +62,8 @@ class ApplicationController < Sinatra::Base
     @oils_and_condiments = params[:oils_and_condiments]
     @dairy = params[:dairy] 
     
-    @final_recipes = Search.search(@excluded_ingredients)
+#     @final_recipes = Search.search(@excluded_ingredients)
+    @final_recipes = Search.search(@selected_ingredients)
     erb :results
   end
 
