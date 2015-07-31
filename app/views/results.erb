@@ -1,0 +1,16 @@
+<div class="well well-lg">
+  <%@final_recipes["matches"].each do |recipe|%>
+  <center>
+    <h1><% recipe["recipeName"]%></h1>
+    <img src="<%recipe["imageUrlsBySize"]%>" alt="A Viable Recipe">
+    <h3>Rating:<% recipe["rating"]%></h3>
+    <h3>totalTimeInSeconds:<% recipe["rating"]%></h3>
+    <h3>Ingredients:</h3>
+    <% recipe["ingredients"].each do |ingredient| %>
+    <p><%=ingredient%>, <p>
+    <% end %>
+  </center>
+  <% end %>
+</div>
+                                                               
+            
