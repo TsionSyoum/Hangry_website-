@@ -1,5 +1,6 @@
 require_relative "../../config/environment"
 require_relative "../models/model.rb"
+# require "pry"
 
 class ApplicationController < Sinatra::Base
   
@@ -44,7 +45,17 @@ class ApplicationController < Sinatra::Base
     end
                   
     @selected_ingredients = []
-    @selected_ingredients = params[:vegetables] + params[:meat_poultry_eggs] + params[:herbs_and_spices] + params[:grains] + params[:seafood] + params[:nuts_and_beans] + params[:oils_and_condiments] + params[:dairy] + params[:fruit]
+    @selected_ingredients.push(params[:vegetables])
+    @selected_ingredients.push(params[:meat_poultry_eggs])
+    @selected_ingredients.push(params[:herbs_and_spices])
+    @selected_ingredients.push(params[:grains])
+    @selected_ingredients.push(params[:seafood])
+    @selected_ingredients.push(params[:nuts_and_beans])
+    @selected_ingredients.push(params[:oils_and_condiments])
+    @selected_ingredients.push(params[:dairy])
+    @selected_ingredients.push(params[:fruit])
+    @selected_ingredients=@selected_ingredients.flatten
+    puts @selected_ingredients
 #     @all_ingredients = Search.all_ingredients
 #     @excluded_ingredients = []
 #     puts @all_ingredients
@@ -63,7 +74,8 @@ class ApplicationController < Sinatra::Base
     @dairy = params[:dairy] 
     
 #     @final_recipes = Search.search(@excluded_ingredients)
-    @final_recipes = Search.search(@selected_ingredients)
+    @final_recipes = Search.search(@selected_ingredients) 
+#     binding.pry
     erb :results
   end
 

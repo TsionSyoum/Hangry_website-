@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: JuneBug;
   src: url(../fonts/junebug.otf); /* IE9 Compat Modes */ }
@@ -61,11 +62,14 @@ a#contact {
   height: 70px
 }
  
-button
+.navbar-nav {
+  margin-left: 25%;
+}
 
 .navbar-default .navbar-nav>li>a {
 color: rgb(199,40,32);
   text-align: center;
+ 
 }
 
 .navbar-nav>li>a {
@@ -101,6 +105,12 @@ h2 {
 /* section h2 {
   size: 32px;
 } */
+
+button {
+ 
+  opacity: 0.9;
+  color: rgb(199,40,32);
+}
 
 hr {
      color: black;

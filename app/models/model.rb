@@ -43,11 +43,11 @@ class Search
     allowed_ingredients.each do |allowed|
       allowed = allowed.gsub(" ", "+")
       
-      @url += "&allowedIngredient[]=" + "#{allowed}"
+      @url += "&allowedIngredient[]=" + "#{allowed.downcase}"
       
     end
     
-    @url += "&maxResult=1000&start=10"
+    @url += "&maxResult=20&start=0"
   
     recipes = open(@url).read
     return JSON.parse(recipes)
